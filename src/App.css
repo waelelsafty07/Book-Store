@@ -1,38 +1,234 @@
-.App {
-  text-align: center;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.lightblue {
+  color: #4386bf;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.bg-white {
+  background-color: #fff;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.progress-bar {
+  width: 60px;
+  height: 60px;
+  position: relative;
+  border-radius: 50%;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.progress-icon {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: 50%;
+  background-image: linear-gradient(to top, #307bbe, #379cf6);
+  z-index: 1;
+  transform: rotate(210deg);
+}
+
+.inner-circle {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.btn {
+  background-color: #0290ff;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 2px;
+}
+
+.d-flex {
   display: flex;
+}
+
+.d-flex-column {
   flex-direction: column;
+}
+
+.d-space-between {
+  justify-content: space-between;
+}
+
+.d-justify-center {
+  justify-content: space-between;
+}
+
+.align-center {
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.liststyle {
+  list-style: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.container {
+  width: 90%;
+}
+
+nav {
+  padding: 1rem;
+  margin: 1rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.navbar {
+  gap: 1rem;
+}
+
+.navbar .title {
+  cursor: pointer;
+  color: #0290ff;
+  font-size: 1.8rem;
+}
+
+.navbar .menu ul {
+  gap: 1rem;
+}
+
+.navbar .menu ul .navbar-link {
+  color: #000;
+  text-decoration: none;
+  opacity: 0.5;
+}
+
+.navbar .menu ul .active {
+  opacity: 1;
+}
+
+nav .profile svg {
+  font-size: 3rem;
+  color: #0290ff;
+}
+
+.card-book {
+  padding: 1rem;
+  border: 1px solid #eee;
+  margin: 1rem;
+}
+
+.listBooks {
+  width: 100%;
+  padding: 1rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.details-book {
+  width: 70%;
+  border-right: 1px solid #eee;
+  margin: 0 1rem 0 0;
+}
+
+.details-book .complete {
+  gap: 1rem;
+  width: 30%;
+}
+
+.details-book .complete .percent-completed {
+  font-size: 2rem;
+}
+
+.details-book .complete .completed {
+  font-size: 0.875rem;
+  opacity: 0.5;
+}
+
+.data-of-book {
+  width: 100%;
+}
+
+.data-of-book .type,
+.data-of-book .actions {
+  margin: 0.5rem 0;
+}
+
+.data-of-book .type {
+  color: #121212;
+  opacity: 0.8;
+  font-weight: bold;
+}
+
+.data-of-book .title {
+  font-size: 1.375rem;
+  font-weight: bold;
+}
+
+.data-of-book .author {
+  font-size: 0.875rem;
+}
+
+.data-of-book .actions ul {
+  gap: 1rem;
+}
+
+.progress .title {
+  color: #121212;
+  opacity: 0.5;
+  text-transform: uppercase;
+}
+
+.progress .chapter {
+  color: #121212;
+}
+
+.progress .btn {
+  margin-top: 2rem;
+}
+
+.Add {
+  padding: 1rem;
+  margin: 1rem;
+}
+
+.Add .body {
+  margin: 1rem 0;
+}
+
+.Add .body .text {
+  width: 60%;
+  margin: 0 1rem;
+}
+
+.Add .body .author {
+  width: 20%;
+  margin: 0 1rem;
+}
+
+.Add .body .button {
+  width: 20%;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+}
+
+select option {
+  padding: 1rem;
+}
+
+.form-control-input,
+.form-control-author,
+.button .btn {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 4px;
+  border: solid 1px #e8e8e8;
+}
+
+.button .btn {
+  text-transform: uppercase;
 }
