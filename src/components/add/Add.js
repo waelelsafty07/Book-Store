@@ -1,4 +1,3 @@
-import Author from '../utils/Author';
 import Button from '../utils/Buttons';
 import Input from '../utils/Input';
 
@@ -9,8 +8,12 @@ const AddNewBook = () => (
         <h2>Add New Book</h2>
       </div>
       <div className="d-flex body">
-        <Input />
-        <Author />
+        <div className="form-control text">
+          <Input name="Add Title" />
+        </div>
+        <div className="form-control author">
+          <Input name="Author" />
+        </div>
         <div className="button">
           <Button buttonName="add book" />
         </div>

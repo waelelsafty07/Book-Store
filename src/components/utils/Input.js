@@ -1,11 +1,8 @@
-const Input = () => (
-  <div className="form-control text">
-    <input
-      type="text"
-      className="form-control-input bg-white"
-      placeholder="Add title"
-    />
-  </div>
+const Input = ({ name }) => (
+  <input
+    type="text"
+    className="form-control-input bg-white"
+    placeholder={name}
+  />
 );
-
 export default Input;
