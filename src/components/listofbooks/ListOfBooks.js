@@ -1,10 +1,18 @@
+import { v4 as uuidv4 } from 'uuid';
 import OneBook from './OneBook';
+
+const listOfBooks = [
+  {
+    id: uuidv4(),
+    percent: 65,
+  },
+];
 
 const ListOfBooks = () => (
   <>
-    <OneBook />
-    <OneBook />
-    <OneBook />
+    {listOfBooks.map((book) => (
+      <OneBook key={book.id} book={book} />
+    ))}
   </>
 );
 

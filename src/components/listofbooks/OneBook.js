@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react';
 import Button from '../utils/Buttons';
 
-const OneBook = () => {
+const OneBook = ({ book }) => {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    const bar = (65 * 60) / 100;
+    const bar = (Number(book.percent) * 60) / 100;
     setProgress(bar);
-  }, []);
+  }, [book.percent]);
 
   const clipStyle = {
     clip: `rect(0, ${progress}px, 60px, 0)`,
