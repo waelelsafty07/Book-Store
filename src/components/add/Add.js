@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addBook } from '../../redux/books/booksArrSlice';
+import { getBooks, postBook } from '../../redux/books/booksArrSlice';
 import Button from '../utils/Buttons';
 import Input from '../utils/Input';
 
@@ -11,12 +11,18 @@ const AddNewBook = () => {
 
   const onChangeTitle = (e) => setTitle(e.target.value);
   const onChangeAuthor = (e) => setAuthor(e.target.value);
-  const handleSubmit = (e) => {
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!title || !author) return;
-    dispatch(addBook([title, author]));
-    setTitle('');
-    setAuthor('');
+    try {
+      await dispatch(postBook([title, author]));
+      dispatch(getBooks());
+      setTitle('');
+      setAuthor('');
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (

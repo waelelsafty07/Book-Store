@@ -47,6 +47,8 @@
 - [x] **[setup app]**
 - [x] **[Components Added]**
 - [x] **[Deploy]**
+- [x] **[Use redux]**
+- [x] **[Add functionalty]**
 <!-- LIVE DEMO -->
 
 ## 🚀 Live Demo <a name="#"></a>
@@ -134,8 +136,7 @@ For Run Fix Stylint
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **[Add functionalty]**
-- [ ] **[Use redux]**
+
 - [ ] **[Add animations and transitions]**
 - [ ] **[Add more styles and colors]**
 
