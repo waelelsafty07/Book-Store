@@ -27,7 +27,7 @@ const OneBook = ({ book }) => {
             <ul className="d-flex liststyle">
               <li>comments</li>
               <li>
-                <button type="button" onClick={() => handleDeleteBook()}>
+                <button className="btn-remove lightblue " type="button" onClick={() => handleDeleteBook()}>
                   Remove
                 </button>
               </li>

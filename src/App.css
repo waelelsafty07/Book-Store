@@ -232,3 +232,8 @@ select option {
 .button .btn {
   text-transform: uppercase;
 }
+
+.btn-remove {
+  background: none;
+  border: none;
+}
