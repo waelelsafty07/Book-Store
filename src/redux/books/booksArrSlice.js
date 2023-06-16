@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { v4 as uuidv4 } from 'uuid';
 
 const initialState = {
   bookItem: [
@@ -30,7 +31,17 @@ const booksSlice = createSlice({
   initialState,
   reducers: {
     addBook: (state, action) => {
-      state.bookItem.push(action.payload);
+      const bookTitle = action.payload[0];
+      const bookAuthor = action.payload[1];
+      const newBook = {
+        id: uuidv4(),
+        title: bookTitle,
+        author: bookAuthor,
+        category: 'Action',
+        percent: 40,
+        chapter: '13',
+      };
+      state.bookItem.push(newBook);
     },
     removeBook: (state, action) => {
       const bookId = action.payload;

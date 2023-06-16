@@ -1,12 +1,10 @@
-import { forwardRef } from 'react';
-
-const Input = forwardRef(({ name }, ref) => (
+const Input = ({ name, onChange, value }) => (
   <input
     type="text"
     className="form-control-input bg-white"
     placeholder={name}
-    ref={ref}
+    value={value}
+    onChange={onChange}
   />
-));
-Input.displayName = 'Input';
+);
 export default Input;
