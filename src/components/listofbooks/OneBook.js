@@ -1,19 +1,20 @@
-import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { removeBook } from '../../redux/books/booksArrSlice';
+import { deleteBook, getBooks } from '../../redux/books/booksArrSlice';
 import Button from '../utils/Buttons';
 
 const OneBook = ({ book }) => {
-  const [progress, setProgress] = useState(0);
   const dispatch = useDispatch();
-
-  useEffect(() => {
-    const bar = (Number(book.percent) * 60) / 100;
-    setProgress(bar);
-  }, [book.percent]);
+  const handleDeleteBook = async () => {
+    try {
+      await dispatch(deleteBook(book.id));
+      dispatch(getBooks());
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   const clipStyle = {
-    clip: `rect(0, ${progress}px, 60px, 0)`,
+    clip: `rect(0, ${(65 * 60) / 100}px, 60px, 0)`,
   };
   return (
     <div className="d-flex card-book">
@@ -26,10 +27,7 @@ const OneBook = ({ book }) => {
             <ul className="d-flex liststyle">
               <li>comments</li>
               <li>
-                <button
-                  type="button"
-                  onClick={() => dispatch(removeBook(book.id))}
-                >
+                <button type="button" onClick={() => handleDeleteBook()}>
                   Remove
                 </button>
               </li>
@@ -44,7 +42,7 @@ const OneBook = ({ book }) => {
           </div>
           <div className="percent">
             <div className="percent-completed">
-              {(progress * 100) / 60}
+              65
               <span>%</span>
             </div>
             <div className="completed">completed</div>
