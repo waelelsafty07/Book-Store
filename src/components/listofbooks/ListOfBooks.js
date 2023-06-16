@@ -20,7 +20,7 @@ const ListOfBooks = () => {
   return (
     <>
       {isLoading ? (
-        <div>loading ...</div>
+        <div className="spinner" />
       ) : (
         booksArray.map((book) => <OneBook key={book.id} book={book} />)
       )}
