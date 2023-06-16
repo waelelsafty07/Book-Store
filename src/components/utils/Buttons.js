@@ -1,5 +1,5 @@
-const Button = ({ buttonName }) => (
-  <button className="btn" type="submit">
+const Button = ({ buttonName, handleSubmit }) => (
+  <button className="btn" type="submit" onClick={handleSubmit}>
     {buttonName}
   </button>
 );

@@ -1,8 +1,11 @@
 import { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { removeBook } from '../../redux/books/booksArrSlice';
 import Button from '../utils/Buttons';
 
 const OneBook = ({ book }) => {
   const [progress, setProgress] = useState(0);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const bar = (Number(book.percent) * 60) / 100;
@@ -16,13 +19,20 @@ const OneBook = ({ book }) => {
     <div className="d-flex card-book">
       <div className="d-flex details-book">
         <div className="data-of-book">
-          <div className="type">Action</div>
-          <div className="title">The Hunters of Games</div>
-          <div className="author lightblue">Suzanne collins</div>
+          <div className="type">{book.category}</div>
+          <div className="title">{book.title}</div>
+          <div className="author lightblue">{book.author}</div>
           <div className="actions lightblue">
             <ul className="d-flex liststyle">
               <li>comments</li>
-              <li>Remove</li>
+              <li>
+                <button
+                  type="button"
+                  onClick={() => dispatch(removeBook(book.id))}
+                >
+                  Remove
+                </button>
+              </li>
               <li>Edit</li>
             </ul>
           </div>
